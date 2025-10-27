@@ -24,6 +24,32 @@ nav img{
     margin-left: 5%;
 }
 
+.navbar h2 {
+    /* Fija la altura mínima para evitar el salto */
+    min-height: 1.5em; /* Ajusta este valor según el tamaño de tu fuente */
+    
+    /* Fija el espacio de línea para asegurar que la altura no cambie */
+    line-height: 1.5; /* Un valor común para textos legibles */
+    
+    /* Asegura que el tamaño de fuente inicial sea consistente (si no lo está ya) */
+    font-size: 1.5rem; 
+}
+
+/* También debes mantener los estilos de animación si los pusiste */
+#typing-name {
+    border-right: 2px solid white; 
+    width: fit-content; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    animation: 
+      blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
 h1{
     font-size: 65px;
     font-weight: 600;
