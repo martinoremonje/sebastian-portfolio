@@ -74,44 +74,25 @@ h1{
   }
 }
 
-/* Estilos para el botón flotante de WhatsApp */
 .whatsapp-float {
-    /* Posición Fija en la pantalla, independientemente del scroll */
-    position: fixed; 
     
-    /* 2. Ubicación: Abajo y a la Derecha */
-    bottom: 20px; 
-    right: 20px;
-    
-    /* 3. Capa: Asegura que esté por encima de otros elementos */
+
+    /* 2. Define su posición, por ejemplo, en la esquina inferior derecha */
+    bottom: 20px; /* Distancia desde la parte inferior de la ventana */
+    right: 20px;  /* Distancia desde la parte derecha de la ventana */
+
+    /* Opcional: Asegura que esté por encima de otros elementos */
     z-index: 1000;
-    /* Dimensiones para hacerlo redondo */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Hace el elemento completamente redondo */
-    /* Color de WhatsApp */
-    background-color: #25d366; 
-    /* Sombra para que se vea más flotante */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
-    /* Asegura que esté por encima de otros elementos */
-    z-index: 1000; 
-    /* Centrar el ícono */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Transición suave al pasar el mouse */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
+
+    /* Opcional: Estilos para el ícono */
+    font-size: 70px; /* Tamaño del ícono */
+    color: #25D366; /* Color verde de WhatsApp */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    /* Puedes añadir un fondo, un borde redondeado, sombra, etc. */
 }
 
-/* Estilos del ícono */
-.whatsapp-float i {
-    font-size: 30px; /* Tamaño del ícono de WhatsApp */
-    color: white; /* Color blanco para el ícono */
-}
-
-/* Efecto al pasar el mouse (hover) */
 .whatsapp-float:hover {
-    background-color: #1ebe58; /* Un color ligeramente más oscuro al pasar el mouse */
-    transform: scale(1); /* Ligeramente más grande */
+    color: #3eda77; 
+    font-size: 75px;
 }
+
