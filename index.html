@@ -19,7 +19,8 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <a class="nav-link active" aria-current="page" href="#about-me">Mis Áreas</a>
+                  <a class="nav-link" href="#about-me">Presentación</a>
+                  <a class="nav-link" href="#areas">Mis Áreas</a>
                   <a class="nav-link" href="#trabajos">Trabajos</a>
                   <a class="nav-link" href="#contacto">Contacto</a>
                 </div>
@@ -30,7 +31,7 @@
                 
                 <div class="mx-auto col-12  text-center text-md-end">
     <h1 class="my-5 m-5">Fotógrafo <br> Profesional</h1>
-    <p class="fw-bold">"La belleza de la vida se vuelve inmortal a traves del lente de la cámara.  <br> Colores, luces y recuerdos se unen en una sola tonalidad para ser escuchada y atesorada por siempre."</p>
+    <p class="fw-bold">"La belleza de la vida se vuelve inmortal a través del lente de la cámara.  <br> Colores, luces y recuerdos se unen en una sola tonalidad para ser apreciada y atesorada por siempre."</p>
 </div>
 
                 <div class="col-11 mb-4" style="margin-top: 4%;" id="about-me">
@@ -44,12 +45,12 @@
         <hr>
         <section class="container text-center my-5"><div class="container">
     <div class="w-100 w-md-50 mx-auto">
-        <video class="w-75" controls loop muted autoplay>
+        <video  class="w-75" controls loop muted autoplay>
             <source src="./assets/img/110548-689510287_tiny.mp4" type="video/mp4">
             Tu navegador no soporta la etiqueta de video.
         </video>
     </div></section>
-    <hr>
+    <hr id="areas">
         <section  class="container text-center my-5">
             <h2 class="fw-bold display-3 my-4">Mis Áreas</h2>
             <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dignissimos, ipsam excepturi consequatur molestias expedita optio ,ipsam excepturi consequatur molestias expedita optio</p>
@@ -113,31 +114,41 @@
             </div>
         </section>
         <section id="contacto" class="container my-5">
-            <h2 class="display-3 text-center fw-bold">Contáctame</h2>
-            <p class="text-center ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque enim distinctio voluptatem vitae eveniet autem veritatis, odio optio eligendi ipsa ad inventore harum a facilis libero vero eum? Aliquid, quod!</p>
+    <h2 class="display-3 text-center fw-bold">Contáctame</h2>
+    <p class="text-center ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque enim distinctio voluptatem vitae eveniet autem veritatis, odio optio eligendi ipsa ad inventore harum a facilis libero vero eum? Aliquid, quod!</p>
+    
+    <div class="row">
+        
+        <div class="col-md-6 p-4">
             <form action="">
                 <div class="form-group mb-4">
-                    <label class="fw-bold" for="">Nombre:</label>
+                    <label class="fw-bold" for="txtNombre">Nombre:</label>
                     <input class="form-control" type="text" id="txtNombre" name="nombre" placeholder="Nombre">
-                   
                 </div>
                 <div class="form-group mb-4">
-                    <label class="fw-bold" for="">Email:</label>
-                    <input class="form-control" type="text" id="" name="email" placeholder="Email">
+                    <label class="fw-bold" for="txtEmail">Email:</label>
+                    <input class="form-control" type="text" id="txtEmail" name="email" placeholder="Email">
                 </div>
                 <div class="form-group mb-4">
-                    <label class="fw-bold" for="">Mensaje:</label>
-                    <textarea class="form-control" type="text" placeholder="Escribe aqui tu mensaje"></textarea>
+                    <label class="fw-bold" for="txtMensaje">Mensaje:</label>
+                    <textarea class="form-control" id="txtMensaje" placeholder="Escribe aqui tu mensaje"></textarea>
                 </div>
                 <div class="text-end">
                     <button class="btn btn-info text-light my-3">Enviar</button>
                 </div>
             </form>
-        </section>
+        </div>
+
+        <div class="col-md-6 d-none d-md-block" id="contacto-imagen"  style="background-image: url('assets/img/card-3.jpg');">
+            </div>
+        
+    </div>
+    </section>
     </main>
     <footer class="bg-dark text-center text-light" style="height: 45px;">
         <p style="padding-top: 1%;">Sebastian Astudillo 2025. Todos los derechos reservados.</p>
     </footer>
+    
     
     <a href="https://wa.me/56912345678" target="_blank" class="whatsapp-float fixed-bottom text-end">
         <i class="fa-brands fa-whatsapp"></i>
