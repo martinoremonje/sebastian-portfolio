@@ -74,26 +74,38 @@ h1{
   }
 }
 
+/* Estilo para el botón flotante de WhatsApp */
 .whatsapp-float {
+    /* CRÍTICO: Esto hace que el ancho del <a> se colapse al tamaño de su contenido (el icono) */
+    display: inline-block; 
     
-
-    /* 2. Define su posición, por ejemplo, en la esquina inferior derecha */
-    bottom: 20px; /* Distancia desde la parte inferior de la ventana */
-    right: 20px;  /* Distancia desde la parte derecha de la ventana */
-
-    /* Opcional: Asegura que esté por encima de otros elementos */
-    z-index: 1000;
-
-    /* Opcional: Estilos para el ícono */
-    font-size: 70px; /* Tamaño del ícono */
+    /* Configura la posición fija en la esquina inferior derecha */
+    position: fixed; /* Opcional si ya usas fixed-bottom, pero es más explícito */
+    bottom: 20px; /* Margen desde el borde inferior */
+    right: 20px; /* Margen desde el borde derecho */
+    
+    /* Asegura que el icono esté por encima de otros contenidos */
+    z-index: 1000; 
+    
+    /* Estilos visuales del icono (puedes ajustarlos) */
+    font-size: 4rem; 
     color: #25D366; /* Color verde de WhatsApp */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    /* Puedes añadir un fondo, un borde redondeado, sombra, etc. */
+    
+    /* Opcional: añade una sombra o efecto para que destaque */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+/* Para prevenir cualquier interferencia de la clase 'text-end' si esta causa problemas */
+.whatsapp-float .fa-brands {
+    /* Asegura que el icono mantenga su tamaño */
+    display: block; 
+    
 }
 
 .whatsapp-float:hover {
     color: #3eda77; 
-    font-size: 75px;
+    font-size: 4.5rem;
 }
 
 
