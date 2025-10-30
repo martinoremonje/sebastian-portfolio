@@ -76,25 +76,28 @@ h1{
 
 /* Estilo para el botón flotante de WhatsApp */
 .whatsapp-float {
-    /* CRÍTICO: Esto hace que el ancho del <a> se colapse al tamaño de su contenido (el icono) */
-    display: inline-block; 
-    
-    /* Configura la posición fija en la esquina inferior derecha */
-    position: fixed; /* Opcional si ya usas fixed-bottom, pero es más explícito */
-    bottom: 20px; /* Margen desde el borde inferior */
-    right: 20px; /* Margen desde el borde derecho */
-    
-    /* Asegura que el icono esté por encima de otros contenidos */
-    z-index: 1000; 
-    
-    /* Estilos visuales del icono (puedes ajustarlos) */
-    font-size: 4rem; 
-    color: #25D366; /* Color verde de WhatsApp */
-    
-    /* Opcional: añade una sombra o efecto para que destaque */
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-}
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1050;
+            
+            /* CRÍTICO: Usar inline-flex o inline-block con width: auto
+             * asegura que el ancho se colapse al contenido del icono.
+             */
+            display: inline-flex; 
+            width: auto; 
+            
+            /* Agrega un padding invisible para un área de toque cómoda sin forzar ancho */
+            padding: 5px; 
+            
+            /* Estilos visuales */
+            font-size: 4rem; 
+            color: #25D366; 
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            transition: transform 0.2s;
+            line-height: 1; /* Asegura que no haya espacio extra que fuerce el ancho */
+        }
 
 /* Para prevenir cualquier interferencia de la clase 'text-end' si esta causa problemas */
 .whatsapp-float .fa-brands {
