@@ -115,3 +115,53 @@ h1{
     text-decoration: underline;
 }
 
+.cuadrado-sombra {
+    /* Define un tamaño fijo para simular un cuadrado (ajusta el ancho y alto a tus necesidades) */
+    width: 80%; /* O el valor que desees */
+    max-width: 600px; /* Evita que crezca demasiado en pantallas grandes */
+    /* background-color: #f8f8f8; /* Opcional: añade un fondo ligero para que la sombra destaque */
+    border: 1px solid #ddd; /* Opcional: Borde sutil */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    
+    /* Sombra difusa */
+    /* box-shadow: horizontal vertical desenfoque expansión color; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    
+    /* Centra el div horizontalmente dentro de su contenedor (si no usas la clase mx-auto de Bootstrap) */
+    /* margin: 0 auto; */
+}
+
+/* Altura completa en escritorio */
+.full-height-section {
+    min-height: 100vh; /* Ocupa el 100% del viewport height */
+}
+
+/* Contenedor de la Imagen: Ahora solo define el comportamiento de la imagen */
+.full-height-image-container {
+    height: auto; /* Ya no forzamos la altura completa aquí */
+    overflow: hidden; 
+    /* Añadimos un margen inferior solo para móviles (lo manejaremos con clases de Bootstrap en HTML para escritorio) */
+}
+
+/* Estilos de la Imagen */
+.full-height-image {
+    width: 100%;
+    height: auto; /* La altura se ajusta automáticamente */
+    max-height: 600px; /* Limita la altura máxima de la imagen para que no sea excesiva */
+    object-fit: cover; 
+}
+
+/* Estilos para Dispositivos Pequeños (Responsive) */
+@media (max-width: 992px) { /* Se activa en tabletas y móviles (menor a lg) */
+    .full-height-section {
+        min-height: auto; 
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    /* En móviles, la imagen solo necesita una altura estándar */
+    .full-height-image-container {
+        height: 40vh; /* Altura manejable para la imagen en móvil */
+        margin-bottom: 30px; /* Separación entre imagen y texto en móvil */
+    }
+}
