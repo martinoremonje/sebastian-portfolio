@@ -1,47 +1,109 @@
+/* --- 1. Tipografía y Variables (Manteniendo Raleway y Modo Claro) --- */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
-body{
-    background-color: #f5f5f5;
+:root {
+    --primary-color: #007bff; /* Color de acento (azul Bootstrap) */
+    --secondary-color: #6c757d;
+    --background-light: #f5f5f5; /* Fondo claro */
+    --text-dark: #212529; /* Color de texto oscuro */
+    --card-background: #ffffff; /* Fondo para secciones/tarjetas */
+    --shadow-deep: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para modo claro */
+    --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-.hero-section{
-    height: 580px;
-    background-image: url("../img/bg-hero.jpg");
-    background-repeat: none;
-    background-size: cover;
+body {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    font-family: 'Raleway', sans-serif; /* Usando tu fuente importada */
+    overflow-x: hidden;
 }
 
-#my-jobs .img-card{
-    height: 250px;
-    background-repeat: none;
-    background-size: cover;
-    background-position: center;
+/* --- 2. Encabezados y Componentes Generales --- */
+h1 {
+    font-size: 65px; /* Tu estilo original */
+    font-weight: 600;
 }
 
-.nav-link:hover{
-    text-decoration: underline;
+h2, h3 {
+    color: var(--text-dark);
+    font-weight: 700;
 }
 
-nav img{
-    margin-left: 5%;
+/* Tu estilo de media query para H1 */
+@media (max-width: 1250px) {
+    h1 {
+        font-size: 35px;
+    } 
+}
+@media (max-width: 767px) {
+    .hero-section h1 {
+        font-size: 3rem; 
+        line-height: 1.1;
+    }
+}
+
+p.lead {
+    font-size: 1.25rem;
+    color: #495057;
+}
+
+/* Estilo para el efecto de sombra (cuadrado-sombra) */
+.cuadrado-sombra {
+    width: 80%;
+    max-width: 600px; 
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra ajustada para modo claro */
+    margin-bottom: 3rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease;
+}
+
+.cuadrado-sombra:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 3. Navegación (Header) --- */
+.navbar {
+    background-color: rgb(241, 241, 241) !important; /* Fondo blanco/claro */
+    box-shadow: var(--shadow-deep) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navbar h2 {
-    /* Fija la altura mínima para evitar el salto */
-    min-height: 1.5em; /* Ajusta este valor según el tamaño de tu fuente */
-    
-    /* Fija el espacio de línea para asegurar que la altura no cambie */
-    line-height: 1.5; /* Un valor común para textos legibles */
-    
-    /* Asegura que el tamaño de fuente inicial sea consistente (si no lo está ya) */
+    min-height: 1.5em; 
+    line-height: 1.5; 
     font-size: 1.5rem; 
+    color: rgb(65, 65, 65) !important; /* El nombre en el navbar con el color de acento */
+    font-weight: 700;
 }
 
-/* También debes mantener los estilos de animación si los pusiste */
+nav img {
+    margin-left: 5%;
+}
+
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 600;
+    margin: 0 10px;
+    padding: 10px 15px !important;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none !important; /* Quitamos el underline por defecto de Bootstrap */
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important; 
+    background-color: rgba(0, 123, 255, 0.05);
+    text-decoration: underline !important; /* Tu estilo de underline al pasar el ratón */
+}
+
+/* Animación de Escritura (Tu Estilo) */
 #typing-name {
-    border-right: 2px solid white; 
+    border-right: 2px solid var(--text-dark); /* Color del cursor oscuro */
     width: fit-content; 
     white-space: nowrap; 
     overflow: hidden; 
@@ -50,122 +112,208 @@ nav img{
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
+    from, to { border-color: transparent }
+    50% { border-color: var(--text-dark); } /* Cursor oscuro */
 }
 
-h1{
-    font-size: 65px;
-    font-weight: 600;
-}
-
-@media (max-width: 1250px) {
-    h1{
-        font-size: 35px;
-    }   
-}
-
-/* Estilos por defecto para pantallas grandes o medianas */
-.hero-section h1 {
-  font-size: 5rem; /* Ajusta este valor si es necesario */
-}
-
-/* Media Query para dispositivos con un ancho máximo de 767px (típicamente móviles) */
-@media (max-width: 767px) {
-  .hero-section h1 {
-    font-size: 3rem; /* Aumenta el tamaño de la fuente para pantallas pequeñas */
-    line-height: 1.1; /* Opcional: ajusta el espaciado entre líneas */
-  }
-}
-
-/* Estilo para el botón flotante de WhatsApp */
-.whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1050;
-            
-            /* CRÍTICO: Usar inline-flex o inline-block con width: auto
-             * asegura que el ancho se colapse al contenido del icono.
-             */
-            display: inline-flex; 
-            width: auto; 
-            
-            /* Agrega un padding invisible para un área de toque cómoda sin forzar ancho */
-            padding: 5px; 
-            
-            /* Estilos visuales */
-            font-size: 4rem; 
-            color: #25D366; 
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-            text-decoration: none;
-            transition: transform 0.2s;
-            line-height: 1; /* Asegura que no haya espacio extra que fuerce el ancho */
-        }
-
-/* Para prevenir cualquier interferencia de la clase 'text-end' si esta causa problemas */
-.whatsapp-float .fa-brands {
-    /* Asegura que el icono mantenga su tamaño */
-    display: block; 
+/* --- 4. Sección Hero (Usando tus estilos de fondo) --- */
+.hero-section {
+    height: 580px;
+    background-image: url("../img/bg-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Aplicamos un degradado para asegurar la legibilidad del texto CLARO */
+    background-blend-mode: overlay; 
+    background-color: rgba(105, 105, 105, 0.4); /* Oscurece la imagen ligeramente */
+    display: flex; /* Aseguramos que el contenido se centre verticalmente si es necesario */
+    align-items: center;
+    color: white !important;
     
+}
+
+.hero-section p {
+    color: rgba(255, 255, 255, 0.9); /* Texto más claro para contraste */
+}
+
+.hero-section .btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.hero-section .btn-dark {
+    background-color: var(--primary-color); /* Usamos el color de acento */
+    border-color: var(--primary-color);
+    color: #fff !important;
+}
+
+.hero-section .btn-dark:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* --- 5. Mis Áreas (Iconos) --- */
+#areas .col-md-4 {
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+#areas .col-md-4:hover {
+    transform: translateY(-5px); 
+    box-shadow: var(--shadow-subtle);
+    background-color: var(--card-background);
+}
+
+#areas i {
+    color: rgb(40, 65, 204); 
+    font-size: 4rem !important;
+    transition: color 0.3s;
+}
+
+/* --- 6. Servicios (Imágenes y Texto) --- */
+/* Tu estilo de altura para secciones */
+.full-height-section {
+    min-height: 100vh; 
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.full-height-image-container {
+    height: auto; 
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-deep);
+}
+
+.full-height-image {
+    width: 100%;
+    height: auto; 
+    max-height: 600px; 
+    object-fit: cover; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.full-height-image:hover {
+    transform: scale(1.03); 
+}
+
+/* Tu estilo de tarjeta de trabajo */
+#my-jobs .img-card{
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- 7. Formulario de Contacto --- */
+#contacto-imagen {
+    min-height: 450px;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 0 12px 12px 0;
+}
+
+#contacto .row {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-deep);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.form-control {
+    background-color: #f8f9fa; /* Fondo muy claro para los inputs */
+    border-color: #ced4da;
+    color: var(--text-dark);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    color: var(--text-dark);
+}
+
+#contacto .btn-info {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    font-weight: 600;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#contacto .btn-info:hover {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+    transform: translateY(-3px);
+}
+
+.parrafo {
+    text-decoration: underline; /* Tu estilo */
+}
+
+/* --- 8. Footer --- */
+footer {
+    background-color: #343a40 !important; /* Fondo oscuro estándar para contraste */
+    color: #fff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px !important;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+/* --- 9. Botón Flotante de WhatsApp (Tus Estilos) --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+    display: inline-flex; 
+    width: auto; 
+    padding: 5px; 
+    font-size: 4.5rem; 
+    color: #25D366; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition: transform 0.2s, font-size 0.2s;
+    line-height: 1; 
+}
+
+.whatsapp-float .fa-brands {
+    display: block; 
 }
 
 .whatsapp-float:hover {
     color: #3eda77; 
-    font-size: 4.5rem;
+    font-size: 5rem;
+    transform: scale(1.05);
 }
 
-.parrafo{
-    text-decoration: underline;
-}
+/* --- 10. Estilos Responsivos (Tus y Míos) --- */
 
-.cuadrado-sombra {
-    /* Define un tamaño fijo para simular un cuadrado (ajusta el ancho y alto a tus necesidades) */
-    width: 80%; /* O el valor que desees */
-    max-width: 600px; /* Evita que crezca demasiado en pantallas grandes */
-    /* background-color: #f8f8f8; /* Opcional: añade un fondo ligero para que la sombra destaque */
-    border: 1px solid #ddd; /* Opcional: Borde sutil */
-    border-radius: 10px; /* Bordes ligeramente redondeados */
-    
-    /* Sombra difusa */
-    /* box-shadow: horizontal vertical desenfoque expansión color; */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    
-    /* Centra el div horizontalmente dentro de su contenedor (si no usas la clase mx-auto de Bootstrap) */
-    /* margin: 0 auto; */
-}
-
-/* Altura completa en escritorio */
-.full-height-section {
-    min-height: 100vh; /* Ocupa el 100% del viewport height */
-}
-
-/* Contenedor de la Imagen: Ahora solo define el comportamiento de la imagen */
-.full-height-image-container {
-    height: auto; /* Ya no forzamos la altura completa aquí */
-    overflow: hidden; 
-    /* Añadimos un margen inferior solo para móviles (lo manejaremos con clases de Bootstrap en HTML para escritorio) */
-}
-
-/* Estilos de la Imagen */
-.full-height-image {
-    width: 100%;
-    height: auto; /* La altura se ajusta automáticamente */
-    max-height: 600px; /* Limita la altura máxima de la imagen para que no sea excesiva */
-    object-fit: cover; 
-}
-
-/* Estilos para Dispositivos Pequeños (Responsive) */
-@media (max-width: 992px) { /* Se activa en tabletas y móviles (menor a lg) */
+/* Tu estilo de media query para secciones completas */
+@media (max-width: 992px) { 
     .full-height-section {
         min-height: auto; 
         padding-top: 30px;
         padding-bottom: 30px;
     }
     
-    /* En móviles, la imagen solo necesita una altura estándar */
     .full-height-image-container {
-        height: 40vh; /* Altura manejable para la imagen en móvil */
-        margin-bottom: 30px; /* Separación entre imagen y texto en móvil */
+        height: 40vh; 
+        margin-bottom: 30px; 
     }
 }
