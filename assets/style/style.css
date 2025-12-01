@@ -1,5 +1,6 @@
 /* --- 1. Tipografía y Variables (Manteniendo Raleway y Modo Claro) --- */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 :root {
     --primary-color: #007bff; /* Color de acento (azul Bootstrap) */
@@ -16,6 +17,31 @@ body {
     color: var(--text-dark);
     font-family: 'Raleway', sans-serif; /* Usando tu fuente importada */
     overflow-x: hidden;
+}
+
+.section-spacing {
+padding-top: 5rem; /* Espacio superior */
+padding-bottom: 5rem; /* Espacio inferior */
+}
+
+/* Importar la fuente (esto iría al inicio de tu CSS o en el <head> del HTML) */
+
+/* Aplicar el estilo al título */
+.titulo-caligrafia {
+    /* Fuente de caligrafía (usando 'Great Vibes' como ejemplo) */
+    font-family: 'Great Vibes', cursive; 
+    
+    /* Para el subrayado */
+    text-decoration: underline; 
+    
+    /* Opcional: Aumentar el tamaño para que se vea mejor */
+    font-size: 5rem; 
+    
+    /* Opcional: Color de texto */
+    color: #8B4513; /* Un marrón elegante, ideal para bodas */
+    
+    /* Opcional: Espaciado entre letras para mejor legibilidad */
+    letter-spacing: 2px;
 }
 
 /* --- 2. Encabezados y Componentes Generales --- */
@@ -123,6 +149,7 @@ nav img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    
     /* Aplicamos un degradado para asegurar la legibilidad del texto CLARO */
     background-blend-mode: overlay; 
     background-color: rgba(105, 105, 105, 0.4); /* Oscurece la imagen ligeramente */
@@ -155,6 +182,28 @@ nav img {
     background-color: #0056b3; 
     border-color: #0056b3;
     transform: translateY(-3px);
+}
+
+.video-marco-elegante {
+max-width: 700px; /* Tamaño máximo para el contenedor del video */
+margin: 0 auto; /* Centrar el contenedor del video */
+padding: 15px; 
+border: 5px solid #E6D7A2;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+background-color: #F5F5DC;
+width: 100%;
+box-sizing: border-box; 
+}
+
+.video-marco-elegante video {
+display: block;
+width: 100%; 
+height: auto; /* Importante para mantener la proporción de aspecto */
+}
+
+/* Es importante asegurar que el video se adapte perfectamente dentro del marco */
+.video-marco-elegante video {
+    display: block; /* Elimina espacios extra debajo del video */
 }
 
 /* --- 5. Mis Áreas (Iconos) --- */
@@ -311,9 +360,19 @@ footer p {
         padding-top: 30px;
         padding-bottom: 30px;
     }
+
+    .video-marco-elegante video {
+        max-height: 400px; /* Limita la altura del video */
+        object-fit: contain; /* Asegura que el video se vea completo si no tiene la misma proporción que 400px */
+    }
     
     .full-height-image-container {
         height: 40vh; 
         margin-bottom: 30px; 
     }
+
+    .titulo-caligrafia {
+font-size: 4rem; /* Reducido a 64px aprox. */
+margin-bottom: 2rem;
+}
 }
